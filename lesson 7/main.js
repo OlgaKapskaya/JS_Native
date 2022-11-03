@@ -66,12 +66,12 @@ const isIncludes = (str, incStr) => {
 
 
 
-console.log(isIncludes("Incubator", "Cut"))
-console.log(isIncludes("Incubator", "table"))
-console.log(isIncludes("Incubator", "inbba"))
-console.log(isIncludes("Incubator", "inba"))
-console.log(isIncludes("Incubator", "Incubatorrr"))
-console.log(isIncludes("Incubator", "aaaaaaaaaaaa"))
+// console.log(isIncludes("Incubator", "Cut"))
+// console.log(isIncludes("Incubator", "table"))
+// console.log(isIncludes("Incubator", "inbba"))
+// console.log(isIncludes("Incubator", "inba"))
+// console.log(isIncludes("Incubator", "Incubatorrr"))
+// console.log(isIncludes("Incubator", "aaaaaaaaaaaa"))
 
 // isIncludes("Incubator", "Cut") => true
 // isIncludes("Incubator", "table") => false
