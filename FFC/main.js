@@ -34,3 +34,25 @@ function include(arr, item){
 // console.log(include([1, 2, 3, 4], 3));
 // console.log(include([1, 2, 4, 5], 3));
 // console.log(include([], 3));
+
+function telephoneCheck(str) {
+    let regexp =  /^(1)?[- ]?\(?(?:\d{3})\)?[- ]?\d\d\d[- .]?\d\d\d\d$/
+    let str1 = str.replace(/\s/g, '')
+    let arr = str1.split('')
+    if (arr.includes('(') ) {
+        if (!arr.includes(')')) return false
+    }
+    if (arr.includes(')') ) {
+        if (!arr.includes('(')) return false
+    }
+    return regexp.test(str)
+}
+// console.log(telephoneCheck("555-555-5555")); //true
+// console.log(telephoneCheck("1 555-555-5555")); //true
+// console.log(telephoneCheck("555-5555")); //false
+// console.log(telephoneCheck("2 (757) 622-7382")); //false
+// console.log(telephoneCheck("1 555)555-5555")); //false
+// console.log(telephoneCheck("1 (555) 555-5555")); //true
+// console.log(telephoneCheck("(555)555-5555")); //true
+// console.log(telephoneCheck("555)-555-5555")); //false
+// console.log(telephoneCheck("(555-555-5555")); //false
