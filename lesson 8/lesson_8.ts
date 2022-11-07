@@ -65,15 +65,15 @@ export const isEvenIndexSumGreater = (arr: Array<number>): boolean => {
 //     return array.filter( elem => elem > 0 && Number.isInteger(elem)).map(elem => elem**2)
 // }
 
-export function getSquarePositiveIntegers(array: Array<number>): Array<number> {
-    let rez = []
-    for (let i = 0; i< array.length; i++){
-        if (array[i] > 0 && Number.isInteger(array[i])) {
-            rez.push(array[i]**2)
-        }
-    }
-    return rez
-}
+// export function getSquarePositiveIntegers(array: Array<number>): Array<number> {
+//     let rez = []
+//     for (let i = 0; i< array.length; i++){
+//         if (array[i] > 0 && Number.isInteger(array[i])) {
+//             rez.push(array[i]**2)
+//         }
+//     }
+//     return rez
+// }
 
 // 6. Функция принимает параметром целое не отрицательное число N и возвращает сумму всех чисел от 0 до N включительно
 // Попробуйте реализовать функцию без использования перебирающих методов.
