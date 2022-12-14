@@ -122,3 +122,20 @@ function checkCashRegister(price, cash, cid) {
 //     ["ONE HUNDRED", 0]])); //{status: "CLOSED", change: [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0],
 // // ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]}.
 // console.log(checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]));
+
+
+function remainder(n, m) {
+    let max = Math.max(n, m)
+    let min = Math.min(n, m)
+    return min !== 0 ? max % min : NaN
+}
+
+//
+// console.log(remainder(13, 72))
+function flattenAndSort(array) {
+    let rezArray = []
+    array.forEach( arr => rezArray = rezArray.concat(arr))
+    return rezArray.sort((a,b) => a - b);
+}
+
+//console.log(flattenAndSort([[3, 2, 1], [7, 9, 8], [6, 4, 5]]))
