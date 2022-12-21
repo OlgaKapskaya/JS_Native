@@ -4,7 +4,8 @@ const students = [
         name: "Bob",
         age: 22,
         isMarried: true,
-        scores: 85
+        scores: 85,
+        friends: ["Alex", "Nick", "John"]
     },
     {
         id: 2,
@@ -108,14 +109,14 @@ let copyStudents = [...students];
 //4*. Полная (глубокая) копия массива students (map)
 let deepCopyStudents = students.map(elem => {
     return (
-        {...elem}
+        elem?.friends ? {...elem, friends: [...elem.friends]} : elem
     )
 });
 
 //Проверка:
-// console.log(deepCopyStudents === students) //false
-// console.log(deepCopyStudents[0] === students[0]) //false
-// console.log(deepCopyStudents[1] === students[1]) //false
+console.log(deepCopyStudents === students) //false
+console.log(deepCopyStudents[0] === students[0]) //false
+console.log(deepCopyStudents[0].friends === students[0].friends) //false
 // console.log(deepCopyStudents[2] === students[2]) //false
 // console.log(deepCopyStudents[3] === students[3]) //false
 // console.log(deepCopyStudents[4] === students[4]) //false

@@ -139,3 +139,35 @@ function flattenAndSort(array) {
 }
 
 //console.log(flattenAndSort([[3, 2, 1], [7, 9, 8], [6, 4, 5]]))
+multiplicationTable = function(size) {
+    let rezArray = []
+    let temp = []
+    for (let i=0; i<size; i++){
+        let xArray = []
+        for (let j=0; j<size; j++){
+            if (i <= 0) {
+                xArray[j] = (j+1)
+            } else {
+                xArray[j] = (temp[j]*(i+1))
+            }
+        }
+        rezArray.push(xArray)
+        temp = rezArray[0]
+    }
+    return rezArray
+}
+console.log(multiplicationTable(3))
+console.log(multiplicationTable(5))
+
+function getDrinkByProfession(param){
+    let paramToLowerCase = param.toLowerCase()
+    switch (paramToLowerCase) {
+        case "jabroni": return "Patron Tequila"
+        case "school counselor": return "Anything with Alcohol"
+        case "programmer": return "Hipster Craft Beer"
+        case "bike gang member": return "Moonshine"
+        case "politician": return "Your tax dollars"
+        case "rapper": return "Cristal"
+        default: return "Beer"
+    }
+}
