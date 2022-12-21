@@ -156,8 +156,8 @@ multiplicationTable = function(size) {
     }
     return rezArray
 }
-console.log(multiplicationTable(3))
-console.log(multiplicationTable(5))
+// console.log(multiplicationTable(3))
+// console.log(multiplicationTable(5))
 
 function getDrinkByProfession(param){
     let paramToLowerCase = param.toLowerCase()
@@ -171,3 +171,61 @@ function getDrinkByProfession(param){
         default: return "Beer"
     }
 }
+function firstNonConsecutive (arr) {
+    for (let i=0; i<arr.length-1; i++){
+        if (arr[i] !== arr[i+1]-1){
+            return arr[i+1];
+        }
+    }
+    return null;
+}
+
+// console.log(firstNonConsecutive([1,2,3,4,6,7,8]))
+function checkExam(array1, array2) {
+    let result = 0;
+    for (let i=0; i<array1.length; i++){
+        if (array1[i] === array2[i]) result += 4
+        if (array1[i] !== array2[i] && array2[i] !== '') result -= 1
+    }
+    return result > 0 ? result : 0
+}
+//
+// console.log(checkExam(["a", "a", "b", "b"], ["a", "c", "b", "d"])) //6
+// console.log(checkExam(["a", "a", "b", "c"], ["a", "a", "b", "c"])) //16
+
+function expressionMatter(a, b, c) {
+    let rez1 = a * ( b + c )
+    let rez2 = a * b * c
+    let rez3 = a + b * c
+    let rez4 = ( a + b ) * c
+    let rez5 = a + b + c
+    return Math.max(rez1, rez2, rez3, rez4, rez5);
+}
+
+// console.log(expressionMatter(2, 1, 2)) //6
+// console.log(expressionMatter(2, 1, 1)) //4
+// console.log(expressionMatter(10, 5, 6)) //300
+// console.log(expressionMatter(1, 10, 1)) //12
+
+function largestPairSum (numbers) {
+    let temp = numbers.sort((a,b)=>b-a)
+    return temp[0]+temp[1]
+}
+function accum(s) {
+    let temp = s.split('')
+    let rez = []
+    for (let i=0; i < temp.length; i++){
+        if (i===0) rez.push(temp[i].toUpperCase())
+        else {
+            let temp_ = ''
+            for (let j = 0; j < i+1; j++) {
+                if (j===0) temp_+=temp[i].toUpperCase()
+                else temp_+=temp[i].toLowerCase()
+            }
+            rez.push(temp_)
+        }
+    }
+    return rez.join('-')
+}
+
+// console.log(accum("ZpglnRxqenU"))
