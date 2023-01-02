@@ -228,4 +228,40 @@ function accum(s) {
     return rez.join('-')
 }
 
-// console.log(accum("ZpglnRxqenU"))
+// console.log(accum("ZpglnRxqenU")) //Z-Pp-Ggg-Llll-Nnnnn-Rrrrrr-Xxxxxxx-Qqqqqqqq-Eeeeeeeee-Nnnnnnnnnn-Uuuuuuuuuuu
+
+String.prototype.isUpperCase = function() {
+    return this.toUpperCase() === this.toString();
+}
+// console.log('c'.isUpperCase()) //false
+// console.log("C".isUpperCase()) //true
+// console.log('ACSKLDFJSgSKLDFJSKLDFJ'.isUpperCase()) //false
+// console.log('HELLO WORLD'.isUpperCase())//true
+
+function mergeArrays(arr1, arr2) {
+    let arr = [...arr1]
+    for (let i = 0; i< arr2.length; i++) {
+        if ( !arr.includes(arr2[i]) ) arr.push(arr2[i])
+    }
+    return arr.sort((a,b)=> a - b);
+}
+//let mergeArrays = (a, b) => [...new Set([...a, ...b])].sort((a,b)=> a-b)
+
+
+function vowelIndices(word){
+    const vowels = ['a', 'e', 'o', 'u', 'i', 'y']
+    let rezult = []
+    iter: for (let i=0; i<word.length; i++){
+        for (let j=0; j<vowels.length; j++){
+            if (word[i].toLowerCase() === vowels[j]){
+                rezult.push(i+1)
+                continue iter
+            }
+        }
+    }
+    return rezult
+}
+
+console.log(vowelIndices('DhPPnKxdEZelbjfYbuQ'));
+
+
